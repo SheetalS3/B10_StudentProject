@@ -1,0 +1,237 @@
+
+
+- Python Intro
+- Guido Van Rossam -- 1991 -- 20th Feb 1991
+- 
+print("Hello World") -- 
+
+a = 2
+b = 10
+print(a + b)
+
+
+- web development
+- desktop applications
+- database applications
+- network program
+- data science 
+- IOT
+
+
+- Why Python? -- 
+
+
+- Refernces
+	- Durga Notes -- print out -- spiral binding -- 
+	- https://www.programiz.com/python-programming
+	- https://www.geeksforgeeks.org/python-programming-language/
+	
+- Softwares
+	- notepad++ --  https://notepad-plus-plus.org/downloads/v8.4.5/
+	- python -- https://www.python.org/downloads/windows/
+	- vs code  IDE -- https://code.visualstudio.com/download#
+	- anydesk  -- https://anydesk.com/en/downloads/windows
+
+3.6.x
+2.x and 3.x -- 
+print(12)    print(12)
+xrange       range
+
+Python Path:- C:\Users\Admin\AppData\Local\Programs\Python\Python39
+
+- Run python -- version - 3.9.7 -- major_version.minor_version.patch -- 
+	
+	- Python IDLE  -- 
+	- cmd -- 
+	- python shell -- 
+	- notepad -- 
+	- vs code -- 
+	- notepad++ -- 
+- First program
+- Add python to path
+
+- Identifier
+- Reserved Keywords
+- Data Types
+
+
+# Overview Only
+ 
+# numerical
+	- int	  -- 1,70, 45184, 55444455151644646  -- immutable -
+	- float -- 10.1, 11.45,  -- immutable
+	- complex -- 10+2j, 20 + 0j, 
+# seqencial  --- [], (), {}, 
+	- list -- [10,2,3,4,5, 4, 4] -- changes -- 
+	- tuple -- (1,2,3,4,5, 2, 2) -- non - changable -- paranthesis
+	
+	- set -- {1,2,3,4,5} --  changable
+	- frozeset - non - changable -- frozenset({1,2,3,4})
+	
+	- range -- range(1,21)
+	- string  -- """python123~!@#$%^&*()}><TSD"""  'b' str   -- immutable
+	
+	- bytes  -- 
+	- bytearray
+# mapping
+	- dictionary -- {10: 100, 5:25 , "Address": "Pune"}
+- bool - True and False -- 
+- None - 
+
+
+
+
+Absolute Path -- 
+
+# Identifiers
+- rules
+1. never start with number
+2. never use special characters - ~!@#$%^&*
+3. u can use underscore _  -- private and protected variables
+4. case sensitive
+5. never use reserved keywords as an identifier
+    - ['False', 'None', 'True', '__peg_parser__', 'and', 'as', 'assert', 'async', 'await', 'break', 'class', 'continue', 'def', 'del', 'elif', 'else', 'except', 'finally', 'for', 'from', 'global', 'if', 'import', 'in', 'is', 'lambda', 'nonlocal', 'not', 'or', 'pass', 'raise', 'return', 'try', 'while', 'with', 'yield']
+6. no limit on identifier but identifier should be meaningful
+
+
+
+
+# Built in functions
+- print, type , id
+
+
+# 19-09-2022
+
+# PEP8 Rule -- Python Enhancement Pruposal
+
+# im-mutable
+
+mutant -- 
+
+# int forms
+1. decimal -- 10 , 20
+2. binary -- 0b1011, 0B10110   only 1 or 0
+3. octal -- Oo42517, 0O1245442   between 0 to 7 values
+4. hexadecimal -- 0x154af, 0X46897bca  between 0 to 9, a to f
+
+
+                    64    32    16    8    4    2    1
+					
+					
+>>> mark = 34
+>>> a = 45
+>>> a = 0b10110
+>>> a = 0B10110
+>>> v = 045
+  File "<stdin>", line 1
+    v = 045
+          ^
+SyntaxError: leading zeros in decimal integer literals are not permitted; use an 0o prefix for octal integers
+>>> a = b10110
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+NameError: name 'b10110' is not defined
+>>> v101 = "asdas"
+>>> a = 0b10110
+>>> a = 0b10117
+  File "<stdin>", line 1
+    a = 0b10117
+              ^
+SyntaxError: invalid digit '7' in binary literal
+>>> a = 0b10110
+>>>
+>>> v2 = 0o012457
+>>> v2 = 0o012458
+  File "<stdin>", line 1
+    v2 = 0o012458
+                ^
+SyntaxError: invalid digit '8' in octal literal
+>>> a = 0b1011
+>>> int(a)
+11
+>>> bin(10)
+'0b1010'
+>>>
+>>>
+>>> f1 = 10.45
+>>> f2 = 4e3
+>>> f2
+4000.0
+>>> f2 = 4E3
+>>> f2
+4000.0
+>>> type(f2)
+<class 'float'>
+>>>
+>>>
+>>> c1 = 10+2j
+>>> c1 = 10+2i
+  File "<stdin>", line 1
+    c1 = 10+2i
+             ^
+SyntaxError: invalid syntax
+>>> c1 = 10+2j
+>>> type(c1)
+<class 'complex'>
+>>> c2 = 8j
+>>> c2
+8j
+>>> c2 = 0.1+2.5j
+>>> c2
+(0.1+2.5j)
+>>> c1
+(10+2j)
+>>> type(c1)
+<class 'complex'>
+>>> c1 = (10+2j,)
+>>> type(c1)
+<class 'tuple'>
+>>> c1 = (10+2j)
+>>> type(c1)
+<class 'complex'>
+>>>
+>>>
+>>> c1.real
+10.0
+>>> c1.img
+Traceback (most recent call last):
+  File "<stdin>", line 1, in <module>
+AttributeError: 'complex' object has no attribute 'img'
+>>> c1.imag
+2.0
+>>> b1 = True
+>>> b2 = False
+>>> b1 + b 2
+  File "<stdin>", line 1
+    b1 + b 2
+           ^
+SyntaxError: invalid syntax
+>>> b1 + b2
+1
+>>> int(b1)
+1
+>>> int(b2)
+0
+>>> b1 + b2
+1
+>>> bool(b1 + b2)
+True
+>>>
+>>>
+>>> s1 = "In Python, single-quoted strings and"
+>>> s1 = 'In Python, single-quoted strings and'
+>>> s1 = '''In Python, single-quoted strings and'''
+>>> s1 = """In Python, single-quoted strings and"""
+>>> s1 = 'In Python, single-quoted strings' and'
+  File "<stdin>", line 1
+    s1 = 'In Python, single-quoted strings' and'
+                                                ^
+SyntaxError: EOL while scanning string literal
+>>> s1 = "In Python, single-quoted strings Akshay's Lapopt and"
+>>> s1
+"In Python, single-quoted strings Akshay's Lapopt and"
+>>> s1 = '''In Python, single-quoted strings Akshay's Lapopt and'''
+>>>
+>>>
+
+

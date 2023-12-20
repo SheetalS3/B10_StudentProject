@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add a New Student</title>
+</head>
+
+<body>
+    {% block content %}
+    <h2>New Student</h2><hr>
+     <form method="post" action="{% url 'add_new_stud' %}"> 
+        {% csrf_token %}
+
+        Id: <input type="number" name="id_html" value="{{specific_stu_obj.id}}" readonly><br><br>
+
+        <label>First Name:</label>
+        <input type="text" name="firstName_html" value="{{specific_stu_obj.first_name}}" placeholder="Enter First name" required><br><br>
+
+        <label>Last Name:</label>
+        <input type="text" name="last_name_html" value="{{specific_stu_obj.last_name}}" placeholder="Enter Last name" required><br><br>
+
+        <label>Date of birth:</label>
+        <input type="date" name="date_of_birth_html" value="{{specific_stu_obj.date_of_birth|date:'Y-m-d'}}" required><br><br>
+
+        Address: <input type="test" name="address_html" value="{{specific_stu_obj.address}}" required><br><br>
+        
+        Phone number: <input type="number" name="phone_number_html" value="{{specific_stu_obj.phone_number}}" required><br><br>
+
+        
+        <label>Select Department:</label> 
+        <select  name="department_html">
+            {% for choice in departments_db %}
+                <option value="{{ choice.1 }}">{{ choice.1 }}</option>
+            {% endfor %}
+        </select> <br><br>
+
+        <label>Gender:</label>
+        <label>
+            <input type="radio" name="gender_html" value="M"> Male
+        </label>
+        <label>
+            <input type="radio" name="gender_html" value="F"> Female
+        </label> <br><br>
+
+
+       {% if specific_stu_obj.id %}
+        <button type="submit" class="btn btn-primary">Update</button> 
+        {% else %}
+        <button type="submit" class="btn btn-primary">Add Student</button> 
+        {% endif %}
+        
+        <a class="btn btn-info" href="{% url 'homepage' %}">Student Records</a>
+
+    </form> 
+
+    {% endblock %}
+    
+</body>
+
+</html>

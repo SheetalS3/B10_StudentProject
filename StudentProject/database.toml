@@ -1,0 +1,7 @@
+[database]
+ENGINE =  django.db.backends.mysql
+NAME = b10_student
+USER = root
+PASSWORD = Sheetu_1588
+HOST = localhost
+PORT = 3306

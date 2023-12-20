@@ -1,0 +1,54 @@
+{% extends "base.html"%}
+
+<html>
+
+<body>
+    {% block content %}
+
+    <style>
+        table, th, td{
+            border: 1px solid black
+        }
+    </style>
+
+    <h2>Deleted Students Records</h2><hr>
+    
+    <table style="width:60%">
+        <tr>
+          <th>First Name</th>
+          <th>Last Name</th>
+          <th>Date of birth</th>
+          <th>Address</th>
+          <th>Phone Number</th>
+          <th>Is Active</th>
+          <th>Actions</th>
+        </tr>
+{% for i_stud in deleted_studs_obj %}
+        <tr>
+            
+            <td>{{i_stud.first_name}}</td>
+            <td>{{i_stud.last_name}}</td>
+            <td>{{i_stud.date_of_birth|date:"d/m/Y"}}</td>
+            <td>{{i_stud.address}}</td>
+            <td>{{i_stud.phone_number}}</td>
+            <td>{{i_stud.is_active}}</td>
+            <td>
+                <a class="btn btn-info" href="{% url 'restore_student' i_stud.id %}">Restore</a><br>
+
+                <form method="post" action="{% url 'delete_stud_info' i_stud.id%}"   >
+                    {% csrf_token %}
+                    <input type="hidden" name="hard_delete" value="hard_del">
+
+                    <button class="btn btn-danger" type="submit">Delete Permanently</button>                </form>  
+            </td>
+
+        </tr>
+    {% endfor%}
+    
+    
+      </table><br>
+      <a class="btn btn-primary" href="{% url 'homepage' %}">Go Back</a>
+
+      {% endblock %}
+</body>
+</html>
